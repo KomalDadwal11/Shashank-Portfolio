@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Avoid applying unknown custom utilities (not defined in tailwind.config).
+     Use standard CSS here to keep a sensible baseline. */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    /* If you want custom theme tokens like bg-background/text-foreground,
+       define them in `tailwind.config.js` (theme.extend.colors) and then
+       you can use @apply. For now use standard defaults. */
+    margin: 0;
+    color: #111827; /* gray-900 */
+    background: #ffffff;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}
